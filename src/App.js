@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Profile from "./pages/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
           <Route
             path="/projects"
             element={<Projects userName="blessed-sibanda" />}
+          />
+          <Route
+            path="/projects/:name"
+            element={<ProjectDetail userName="blessed-sibanda" />}
           />
         </Routes>
       </BrowserRouter>

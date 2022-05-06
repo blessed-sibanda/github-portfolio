@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Link from "../components/Link";
+import { Link } from "react-router-dom";
 import List from "../components/List";
 
 export default function Projects({ userName }) {
@@ -30,7 +30,9 @@ export default function Projects({ userName }) {
           <List
             items={projects.map((project) => ({
               field: project.name,
-              value: <Link url={project.html_url} title={project.html_url} />,
+              value: (
+                <Link to={"/projects/" + project.name}>{project.name}</Link>
+              ),
             }))}
           />
         </div>
